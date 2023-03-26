@@ -1,7 +1,7 @@
 
-# NotasAluno
+# Cadastro Cliente
 
-Programa feito como forma de estudo, é um cadastro de clientes Simples feito na linguagem Java
+Programa feito como forma de estudo, é um cadastro de alunos Simples feito na linguagem Java
 
 
 
@@ -34,20 +34,23 @@ Java, Api Rest, Banco de Dados, Postgresql...
 O que você aprendeu construindo esse projeto? Quais desafios você enfrentou e como você superou-os?
 
 Absorve melhor como utilizar o JPA, como dividir as pastas do projeto para ficar mais coeso e facilitar o entendimento, Os desafios foi superados com estudo e testes.
-## Documentação da API (Obs: onde tem a {id} coloca o id do cliente que deseja procurar, atualizar ou excluir).
+## Documentação da API (Obs: onde tem a {id} coloca o id do cliente, para excluir, atualizar ou pesquisar).
 
-#### Retorna todos os clientes:
+#### Retorna todos os Clientes:
 
 ```http
   GET: /clientes
 ```
-
 
 #### Retorna um cliente especifico:
 
 ```http
   GET: /clientes/{id}
 ```
+
+| Parâmetro   | Tipo       | Descrição                           |
+| :---------- | :--------- | :---------------------------------- |
+| `id` | `string` | **Obrigatório**. Id do Cliente|
 
 
 #### Para criar novos clientes:
@@ -56,12 +59,31 @@ Absorve melhor como utilizar o JPA, como dividir as pastas do projeto para ficar
   POST: /clientes
 ```
 
+| Parâmetro   | Tipo       | Descrição                                   |
+| :---------- | :--------- | :------------------------------------------ |
+| `nome`      | `string` | **Obrigatório**. O Nome do Cliente |
+| `cpf`      | `string` | **Obrigatório**. O CPF do Cliente |
+| `bairro`      | `string` | **Obrigatório**. O bairro do Cliente |
+| `dataDeNascimento`  | `string` | **Obrigatório**. A data de nascimento do Cliente |
+
+
+
+
 #### Para atualizar um clientes:
 
 
 ```http
   PUT: /clientes/{id}
 ```
+
+| Parâmetro   | Tipo       | Descrição                                   |
+| :---------- | :--------- | :------------------------------------------ |
+| `nome`      | `string` | **Obrigatório**. O Nome do Cliente |
+| `cpf`      | `string` | **Obrigatório**. O CPF do Cliente |
+| `bairro`      | `string` | **Obrigatório**. O bairro do Cliente |
+| `dataDeNascimento`  | `string` | **Obrigatório**. A data de nascimento do Cliente |
+
+
 
 
 #### Para deletar um clientes:
@@ -72,5 +94,16 @@ Absorve melhor como utilizar o JPA, como dividir as pastas do projeto para ficar
 ```
 
 
+| Parâmetro   | Tipo       | Descrição                                   |
+| :---------- | :--------- | :------------------------------------------ |
+| `alunoId`      | `int` | **Obrigatório**. O Id do cliente |
+
+
+
+
+
+## Variáveis de Ambiente
+
+Para rodar esse projeto, você vai precisar adicionar o caminho do banco na pasta resource application.yml.
 
 
